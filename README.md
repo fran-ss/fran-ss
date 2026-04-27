@@ -2,7 +2,7 @@
 **Software Developer | Backend & BI Specialist**
 
 <p align="left">
-  <a href="https://www.linkedin.com/in/francianesantos">
+  <a href="www.linkedin.com/in/franciane-santos-da-hora-757939289">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
   <a href="http://wa.me/5599981240081">
