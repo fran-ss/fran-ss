@@ -1,4 +1,4 @@
-<h1 align="center">💜 Olá, eu sou a Liah!</h1>
+<h1 align="center">💜 Olá, eu sou a Franciane!</h1>
 
 <p align="center">
   Backend Developer | BI & Data Analytics | Embedded Systems | Mobile
