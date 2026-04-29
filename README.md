@@ -1,4 +1,6 @@
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fran-ss/fran-ss/main/WhatsApp%20Image%202026-04-28%20at%2021.35.59.jpeg" width="100%" />
+</p>
 <h1 align="center">💜 Olá, eu sou a Franciane!</h1>
 
 <p align="center">
