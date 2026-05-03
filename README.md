@@ -1,181 +1,257 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/fran-ss/fran-ss/main/WhatsApp%20Image%202026-04-28%20at%2021.35.59.jpeg" width="100%" />
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Franciane | Portfólio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+body {
+  background: #0a0a0f;
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* CANVAS */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* HEADER */
+header {
+  padding: 40px 20px;
+  animation: fadeDown 1s ease;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+img {
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #8A2BE2;
+}
+
+h1 {
+  color: #8A2BE2;
+  font-size: 2.5em;
+  margin-top: 10px;
+}
+
+.subtitle {
+  color: #ccc;
+  margin-top: 10px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* CARDS */
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  backdrop-filter: blur(10px);
+  transition: 0.4s;
+  animation: fadeUp 1s ease;
+  text-align: left; /* Melhor legibilidade para listas */
+}
+
+.card h2 {
+  color: #8A2BE2;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 0 20px #8A2BE2;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ESTILO PARA OS CURSOS */
+.course-item {
+  border-left: 3px solid #8A2BE2;
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+
+.course-item h3 {
+  font-size: 1.1em;
+  color: #fff;
+}
+
+.course-item span {
+  font-size: 0.85em;
+  color: #8A2BE2;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.course-item p {
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+/* BOTÕES */
+.btn {
+  display: block;
+  padding: 15px;
+  margin: 10px 0;
+  background: linear-gradient(45deg, #8A2BE2, #6a1cb0);
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  color: #1a0033;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #8A2BE2;
+}
+
+footer {
+  padding: 30px 0;
+  color: #aaa;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<header>
+<img src="https://raw.githubusercontent.com/fran-ss/fran-ss.github.io/main/WhatsApp%20Image%202026-04-28%20at%2021.35.59.jpeg" width="250"/>
+<h1>💜 Franciane</h1>
+<p class="subtitle">Backend • Data • Embedded Systems</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>👩‍💻 Sobre mim</h2>
+<p style="text-align: center;">
+Desenvolvedora formada em Sistemas para Internet pelo IFMA e residente em Sistemas Embarcados.
+Atuo com backend, dados e hardware criando soluções reais.
 </p>
-<h1 align="center">💜 Olá, eu sou a Franciane!</h1>
+</div>
 
-<p align="center">
-  Backend Developer | BI & Data Analytics | Embedded Systems | Mobile
+<div class="card">
+<h2>🎓 Residências Tecnológicas (EmbarcaTech)</h2>
+
+<div class="course-item">
+  <span>IFMA / SOFTEX • 240h • 2025</span>
+  <h3>Residência em FPGA</h3>
+  <p>Foco em descrição de hardware (Verilog/VHDL), arquitetura de plataformas adaptativas e circuitos digitais complexos.</p>
+</div>
+
+<div class="course-item">
+  <span>IFMA / SOFTEX • 240h • 2025</span>
+  <h3>Residência em Software Embarcado</h3>
+  <p>Desenvolvimento para microcontroladores, RTOS (Sistemas Operacionais de Tempo Real) e projetos aplicados de IoT.</p>
+</div>
+</div>
+
+<div class="card">
+<h2>🚀 Projetos em Destaque</h2>
+<p style="margin-bottom: 15px;"><strong>GASMAR:</strong> Plataforma digital com análise de consumo e gestão de usuários (BFF, JWT, Dashboards).</p>
+<a class="btn" href="https://drive.google.com" target="_blank">▶️ Ver detalhes do projeto</a>
+</div>
+
+<div class="card">
+<h2>💻 Tecnologias</h2>
+<p style="text-align: center; line-height: 1.6;">
+<strong>Linguagens:</strong> C • C++ • Python • C# • Java • Verilog • VHDL<br>
+<strong>Frameworks/DB:</strong> .NET • Django • Node • PostgreSQL • BigQuery<br>
+<strong>Hardware/Cloud:</strong> FPGA • RTOS • Raspberry Pi • Docker • GCP
 </p>
+</div>
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com/?color=8A2BE2&size=22&center=true&vCenter=true&width=700&lines=Backend+Developer;Data+Analytics+Mindset;Embedded+Systems+Engineer;Mobile+Developer;Building+real+solutions🚀" />
-</p>
-
----
-
-## 🌌 About Me
-
-I am a developer who combines **software engineering, data analysis, and embedded systems** to build complete and intelligent solutions.
-
-🎓 **Education**
-- Systems for Internet — IFMA (Timon)  
-- Embedded Systems Residency — IFMA (Monte Castelo)  
-
-💼 **Experience**
-- Development of real-world systems integrating backend, data, and hardware  
-- Highlight project: **GASMAR (functional MVP for digital services)**  
-
-🚀 **Main Areas**
-- Backend  
-- BI & Data Analytics  
-- Embedded Systems  
-- Web & Mobile Development  
-
----
-
-## 🚀 Featured Project — GASMAR
-
-<p align="center">
-  <b>Digital Service Platform focused on customer management and consumption analysis</b>
-</p>
-
----
-
-🎯 **Overview**
-
-GASMAR is a system designed to modernize digital service experiences, providing:
-
-- Financial data consultation  
-- Consumption analysis  
-- User profile management  
-- Integrated support system  
-
----
-
-🧠 **Tech Approach**
-
-- Backend architecture focused on scalability  
-- Data-driven decision support  
-- Structured system design for real-world application  
-
----
-
-🔒 **Private Repository**
-
-This project was developed in a professional environment, therefore the source code is not publicly available.
-
----
-
-🎥 **System Demo**
-
-<p align="center">
-  <a href="https://drive.google.com/file/d/1UvFJJ3Xt82b1tDeQqgyHOE2wMg5EWpL5/view?usp=sharing">
-    <img src="https://img.shields.io/badge/▶️ Watch Demo-8A2BE2?style=for-the-badge"/>
-  </a>
-</p>
-
----
-
-💡 **Key Insight**
-
-This project demonstrates my ability to design and deliver complete, real-world solutions — from architecture to functional product.
-
----
-
-## 🧠 Tech Stack
-
-<div align="center">
-
-### ⚙️ Backend & APIs
-![Python](https://img.shields.io/badge/Python-2E0854?style=for-the-badge&logo=python)
-![Django](https://img.shields.io/badge/Django-4B0082?style=for-the-badge&logo=django)
-![CSharp](https://img.shields.io/badge/CSharp-6A0DAD?style=for-the-badge&logo=c-sharp)
-![.NET](https://img.shields.io/badge/.NET-8A2BE2?style=for-the-badge&logo=dotnet)
-![Java](https://img.shields.io/badge/Java-5D3FD3?style=for-the-badge&logo=java)
-
----
-
-### 📊 Data & BI
-![PowerBI](https://img.shields.io/badge/PowerBI-8A2BE2?style=for-the-badge&logo=powerbi)
-![SQL](https://img.shields.io/badge/SQL-6A0DAD?style=for-the-badge&logo=mysql)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4B0082?style=for-the-badge&logo=postgresql)
-
----
-
-### 🌐 Frontend & Mobile
-![TypeScript](https://img.shields.io/badge/TypeScript-8A2BE2?style=for-the-badge&logo=typescript)
-![JavaScript](https://img.shields.io/badge/JavaScript-6A0DAD?style=for-the-badge&logo=javascript)
-![Vue.js](https://img.shields.io/badge/Vue.js-4B0082?style=for-the-badge&logo=vue.js)
-![HTML](https://img.shields.io/badge/HTML-8A2BE2?style=for-the-badge&logo=html5)
-![CSS](https://img.shields.io/badge/CSS-6A0DAD?style=for-the-badge&logo=css3)
-
----
-
-### 🔌 Embedded Systems
-![C](https://img.shields.io/badge/C-4B0082?style=for-the-badge&logo=c)
-![C++](https://img.shields.io/badge/C++-6A0DAD?style=for-the-badge&logo=cpp)
-![Arduino](https://img.shields.io/badge/Arduino-8A2BE2?style=for-the-badge&logo=arduino)
-![Raspberry](https://img.shields.io/badge/RaspberryPi-4B0082?style=for-the-badge&logo=raspberrypi)
-![FPGA](https://img.shields.io/badge/FPGA-6A0DAD?style=for-the-badge)
+<div class="card">
+<h2>🔗 Links</h2>
+<a class="btn" href="https://github.com/fran-ss" target="_blank">🚀 GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/franciane-santos-da-hora-757939289" target="_blank">💼 LinkedIn</a>
+<a class="btn" href="mailto:francianesachos@gmail.com">📩 Email</a>
+<a class="btn" href="https://www.instagram.com/franciane_ss" target="_blank">📸 Instagram</a>
+</div>
 
 </div>
 
----
+<footer>
+✨ Construindo soluções com código, dados e hardware
+</footer>
 
-## 📊 GitHub Stats
+<script>
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
 
-<div align="center">
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
 
-<img height="170em" src="https://github-readme-stats.vercel.app/api?username=fran-ss&show_icons=true&theme=tokyonight&icon_color=8A2BE2&title_color=8A2BE2&text_color=ffffff&hide_border=true"/>
+const letters = "01{}<>/\\[]+=-";
+const fontSize = 14;
+const columns = canvas.width / fontSize;
 
-<img height="170em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=fran-ss&layout=compact&theme=tokyonight&title_color=8A2BE2&hide_border=true"/>
+const drops = [];
 
-</div>
+for (let x = 0; x < columns; x++) {
+  drops[x] = 1;
+}
 
----
+function draw() {
+  ctx.fillStyle = "rgba(10,10,15,0.05)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-## 🔥 Activity
+  ctx.fillStyle = "#8A2BE2";
+  ctx.font = fontSize + "px monospace";
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=fran-ss&theme=tokyonight&ring=8A2BE2&fire=8A2BE2&currStreakLabel=8A2BE2&hide_border=true"/>
-</p>
+  for (let i = 0; i < drops.length; i++) {
+    const text = letters[Math.floor(Math.random() * letters.length)];
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
----
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+      drops[i] = 0;
+    }
+    drops[i]++;
+  }
+}
 
-## 📊 Contributions Overview
+setInterval(draw, 33);
 
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=fran-ss&theme=tokyonight"/>
-</p>
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+</script>
 
----
-
-## 📫 Contact
-
-<div align="center">
-
-<a href="mailto:francianesachos@gmail.com">
-<img src="https://img.shields.io/badge/Gmail-8A2BE2?style=for-the-badge&logo=gmail"/>
-</a>
-
-<a href="https://www.linkedin.com/in/franciane-santos-da-hora-757939289">
-<img src="https://img.shields.io/badge/LinkedIn-6A0DAD?style=for-the-badge&logo=linkedin"/>
-</a>
-
-<a href="https://github.com/fran-ss">
-<img src="https://img.shields.io/badge/GitHub-4B0082?style=for-the-badge&logo=github"/>
-</a>
-
-<a href="https://www.instagram.com/franciane_ss">
-<img src="https://img.shields.io/badge/Instagram-8A2BE2?style=for-the-badge&logo=instagram"/>
-</a>
-
-</div>
-
----
-
-## ✨
-
-<p align="center">
-  💜 Building intelligent solutions with code, data and hardware
-</p>
+</body>
+</html>
