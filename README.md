@@ -22,7 +22,7 @@ body {
   overflow-x: hidden;
 }
 
-/* CANVAS */
+/* CANVAS BACKGROUND */
 canvas {
   position: fixed;
   top: 0;
@@ -41,12 +41,13 @@ header {
   to { opacity: 1; transform: translateY(0); }
 }
 
-img {
+header img {
   border-radius: 20px;
   transition: 0.4s;
+  object-fit: cover;
 }
 
-img:hover {
+header img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px #8A2BE2;
 }
@@ -68,16 +69,18 @@ h1 {
   padding: 20px;
 }
 
-/* CARDS */
+/* CARDS GLASSMORPHISM */
 .card {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
   border-radius: 15px;
   padding: 20px;
   margin: 20px 0;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: 0.4s;
   animation: fadeUp 1s ease;
-  text-align: left; /* Melhor legibilidade para listas */
+  text-align: left;
 }
 
 .card h2 {
@@ -88,7 +91,7 @@ h1 {
 
 .card:hover {
   transform: translateY(-5px) scale(1.01);
-  box-shadow: 0 0 20px #8A2BE2;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
 }
 
 @keyframes fadeUp {
@@ -103,6 +106,10 @@ h1 {
   margin-bottom: 20px;
 }
 
+.course-item:last-child {
+  margin-bottom: 0;
+}
+
 .course-item h3 {
   font-size: 1.1em;
   color: #fff;
@@ -113,6 +120,7 @@ h1 {
   color: #8A2BE2;
   display: block;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .course-item p {
@@ -124,23 +132,24 @@ h1 {
 .btn {
   display: block;
   padding: 15px;
-  margin: 10px 0;
+  margin: 15px 0 5px 0;
   background: linear-gradient(45deg, #8A2BE2, #6a1cb0);
   border-radius: 10px;
   font-weight: bold;
   text-align: center;
-  color: #1a0033;
+  color: #ffffff; /* Corrigido para melhor contraste */
   transition: 0.3s;
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   box-shadow: 0 0 15px #8A2BE2;
 }
 
 footer {
-  padding: 30px 0;
+  padding: 40px 0;
   color: #aaa;
+  font-size: 0.9em;
 }
 </style>
 </head>
@@ -150,7 +159,7 @@ footer {
 <canvas id="matrix"></canvas>
 
 <header>
-<img src="https://raw.githubusercontent.com/fran-ss/fran-ss.github.io/main/WhatsApp%20Image%202026-04-28%20at%2021.35.59.jpeg" width="250"/>
+<img src="https://raw.githubusercontent.com/fran-ss/fran-ss.github.io/main/WhatsApp%20Image%202026-04-28%20at%2021.35.59.jpeg" width="250" alt="Foto de Franciane">
 <h1>💜 Franciane</h1>
 <p class="subtitle">Backend • Data • Embedded Systems</p>
 </header>
@@ -159,9 +168,8 @@ footer {
 
 <div class="card">
 <h2>👩‍💻 Sobre mim</h2>
-<p style="text-align: center;">
-Desenvolvedora formada em Sistemas para Internet pelo IFMA e residente em Sistemas Embarcados.
-Atuo com backend, dados e hardware criando soluções reais.
+<p style="text-align: center; line-height: 1.6;">
+Desenvolvedora formada em Sistemas para Internet pelo IFMA e residente em Sistemas Embarcados. Atuo com backend, dados e hardware criando soluções reais.
 </p>
 </div>
 
@@ -183,13 +191,13 @@ Atuo com backend, dados e hardware criando soluções reais.
 
 <div class="card">
 <h2>🚀 Projetos em Destaque</h2>
-<p style="margin-bottom: 15px;"><strong>GASMAR:</strong> Plataforma digital com análise de consumo e gestão de usuários (BFF, JWT, Dashboards).</p>
+<p style="margin-bottom: 10px;"><strong>GASMAR:</strong> Plataforma digital com análise de consumo e gestão de usuários (BFF, JWT, Dashboards).</p>
 <a class="btn" href="https://drive.google.com" target="_blank">▶️ Ver detalhes do projeto</a>
 </div>
 
 <div class="card">
 <h2>💻 Tecnologias</h2>
-<p style="text-align: center; line-height: 1.6;">
+<p style="text-align: center; line-height: 1.8;">
 <strong>Linguagens:</strong> C • C++ • Python • C# • Java • Verilog • VHDL<br>
 <strong>Frameworks/DB:</strong> .NET • Django • Node • PostgreSQL • BigQuery<br>
 <strong>Hardware/Cloud:</strong> FPGA • RTOS • Raspberry Pi • Docker • GCP
@@ -219,13 +227,18 @@ canvas.width = window.innerWidth;
 
 const letters = "01{}<>/\\[]+=-";
 const fontSize = 14;
-const columns = canvas.width / fontSize;
+let columns = canvas.width / fontSize;
 
 const drops = [];
-
-for (let x = 0; x < columns; x++) {
-  drops[x] = 1;
+function initDrops() {
+  columns = canvas.width / fontSize;
+  for (let x = 0; x < columns; x++) {
+    if (drops[x] === undefined) {
+      drops[x] = 1;
+    }
+  }
 }
+initDrops();
 
 function draw() {
   ctx.fillStyle = "rgba(10,10,15,0.05)";
@@ -250,6 +263,7 @@ setInterval(draw, 33);
 window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+  initDrops(); // Recalcula colunas sem resetar o progresso
 });
 </script>
 
